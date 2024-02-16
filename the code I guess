@@ -1,0 +1,30 @@
+import socket #haha more like suck it 
+#a cum socket sends messages over internet I think
+
+def send_message(ip_address, port, message):
+    try:
+        # Create a TCP socket. tcp means "throwing child polacks" but it also means trans(gender haha im so funny) mission protocol 
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        # Connect to the server 
+        client_socket.connect((ip_address, port))
+
+        # Send the message
+        client_socket.sendall(message.encode())
+
+        # Close the socket
+        client_socket.close()
+        print("Message sent successfully!")
+    except Exception as e:
+        print("Error:", e) #for failures in the execution. haha more like beheading.
+
+#ip more like I pee
+# Define the IP address and port to send the message to
+ip_address = "192.168.1.100"  # Change this to the target IP address
+port = 12345  # Change this to the target port
+
+# Define the message to send
+message = "donkey kong mustard with feet juice and a side of canadian syrup"
+
+# Send the message
+send_message(ip_address, port, message)
